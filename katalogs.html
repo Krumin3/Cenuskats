@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenu salīdzinājums produktiem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background-color: #a6a6a6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #808080;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+    <center><img src="logo1.png"
+         width="200" 
+         height="175" /></center>
+
+        <h1><br>Produkti</br></h1>
+
+        <select id="navDropdown" onchange="navigateToPage()">
+            <option value="">Izvēlēties produktu</option>
+            <option value="augliundarzeni.html">Augļi un dārzeņi</option>
+            <option value="pienaprodukti.html">Piena produkti</option>
+            <option value="maize.html">Maize</option>
+            <option value="galaunzivis.html">Gaļa un zivis</option>
+            <option value="iepakotapartika.html">Iepakotā pārtika</option>
+            <option value="dzerieni.html">Dzērieni</option>
+            <option value="saldumiunuzkodas.html">Saldumi un uzkodas</option>
+            <option value="saldetapartika.html">Saldētā pārtika</option>
+            <option value="sadziveskimija.html">Sadzīves ķīmija</option>
+            <option value="berniem.html">Bērnu preces</option>
+            <option value="skaistumkopsana.html">Skaistumkopšana un higēna</option>
+            <option value="majdzivniekiem.html">Mājdzīvniekiem</option>
+        </select>
+
+        <script>
+            function navigateToPage() {
+                const dropdown = document.getElementById('navDropdown');
+                const selectedPage = dropdown.value;
+
+                if (selectedPage) {
+                    window.location.href = selectedPage;
+                }
+            }
+        
+
+        </script>
+
+
+
+
+        <br></br>
+        <br></br>
+        <br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
+        <br><p>Izvēlne</p></br>
+        
+        <button onclick="goToPage('index.html')">Atgriezties</button>
+        <button onclick="goToPage('deals.html')">Akcijas</button>
+        <button onclick="goToPage('contacts.html')">Kontakti</button>
+
+        <script>
+            function goToPage(page) {
+                window.location.href = page;
+            }
+        </script>
+</body>
+</html>

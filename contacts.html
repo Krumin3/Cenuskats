@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Price Comparison</h1>
+    <p>Select a section to navigate:</p>
+
+    <select id="navDropdown" onchange="navigateToPage()">
+        <option value="">-- Choose an Option --</option>
+        <option value="categories.html">Categories</option>
+        <option value="deals.html">Deals</option>
+        <option value="contacts.html">Contacts</option>
+    </select>
+
+    <script>
+        function navigateToPage() {
+            const dropdown = document.getElementById('navDropdown');
+            const selectedPage = dropdown.value;
+
+            if (selectedPage) {
+                window.location.href = selectedPage;
+            }
+        }
+    </script>
+
+</body>
+</html>

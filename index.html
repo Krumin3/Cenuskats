@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        button {
+            background-color: #a6a6a6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <center><img src="logo1.png"
+         width="200" 
+         height="175    " /></center>
+   
+    <p><br><center>Cenu salīdzinājuma vietne pārtikas produktiem</center</br></p>
+
+    <button onclick="goToPage('katalogs.html')">Produkti</button>
+    <button onclick="goToPage('deals.html')">Akcijas</button>
+    <button onclick="goToPage('contacts.html')">Kontakti</button>
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

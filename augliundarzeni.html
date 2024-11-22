@@ -1,0 +1,269 @@
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Dropdown Menu</title>
+                        <style>
+                            /* General styles */
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                background-color: #f4f4f4;
+                            }
+
+                            nav {
+                                background-color: #333;
+                                overflow: hidden;
+                            }
+
+                            nav ul {
+                                list-style: none;
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            nav ul li {
+                                float: left;
+                                position: relative;
+                            }
+
+                            nav ul li a {
+                                display: block;
+                                padding: 14px 20px;
+                                color: white;
+                                text-decoration: none;
+                                background-color: #333;
+                                transition: background-color 0.3s;
+                            }
+
+                            nav ul li a:hover {
+                                background-color: #575757;
+                            }
+
+                            /* Dropdown styles */
+                            nav ul li ul {
+                                display: none;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                background-color: #444;
+                                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                                z-index: 1000;
+                            }
+
+                            nav ul li ul li {
+                                width: 200px;
+                            }
+
+                            nav ul li ul li a {
+                                padding: 10px 15px;
+                            }
+
+                            nav ul li ul li a:hover {
+                                background-color: #575757;
+                            }
+
+                            nav ul li:hover ul {
+                                display: block;
+                            }
+
+                            /* Clearfix for floated list items */
+                            nav ul:after {
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                            /* General Styles */
+                            body {
+                                font-family: Arial, sans-serif;
+                                background-color: #f9f9f9;
+                                margin: 0;
+                                padding: 20px;
+                            }
+
+                            /* Page Title */
+                            h1 {
+                                text-align: center;
+                                color: #333;
+                                margin-bottom: 20px;
+                            }
+
+                            /* Search Bar */
+                            .search-container {
+                                text-align: center;
+                                margin-bottom: 20px;
+                            }
+                            .search-container input {
+                                width: 50%;
+                                padding: 10px;
+                                font-size: 16px;
+                                border: 1px solid #ddd;
+                                border-radius: 5px;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                outline: none;
+                                transition: box-shadow 0.2s ease;
+                            }
+                            .search-container input:focus {
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            }
+
+                            /* Comparison Container */
+                            .comparison-container {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 20px;
+                                justify-content: center;
+                                margin-top: 20px;
+                            }
+
+                            /* Product Card */
+                            .product-card {
+                                background-color: white;
+                                border: 1px solid #ddd;
+                                border-radius: 10px;
+                                width: 300px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                overflow: hidden;
+                                transition: transform 0.2s ease-in-out;
+                            }
+                            .product-card:hover {
+                                transform: translateY(-5px);
+                            }
+
+                            /* Product Image */
+                            .product-image {
+                                width: 100%;
+                                height: 200px;
+                                object-fit: cover;
+                            }
+
+                            /* Product Details */
+                            .product-details {
+                                padding: 15px;
+                                text-align: center;
+                            }
+                            .product-name {
+                                font-size: 18px;
+                                font-weight: bold;
+                                margin: 10px 0;
+                                color: #333;
+                            }
+
+                            /* Product Prices Section */
+                            .product-prices {
+                                margin: 15px 0;
+                            }
+                            .price-row {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 5px 0;
+                                border-bottom: 1px solid #eee;
+                            }
+                            .price-row:last-child {
+                                border-bottom: none;
+                            }
+                            .price-row span {
+                                font-size: 16px;
+                            }
+                            .store-name {
+                                font-weight: bold;
+                                color: #333;
+                            }
+                            .price {
+                                color: #4CAF50;
+                                font-weight: bold;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <nav>
+                            <ul>
+                                <li><a href="katalogs.html">Atgriezties</a></li>
+
+                                </li>
+                                <li><a href="contacts.html">Kontakti</a></li>
+                            </ul>
+                        </nav>
+
+
+                        <h1>Produkti</h1>
+
+                        <!-- Search Bar -->
+                        <div class="search-container">
+                            <input type="text" id="searchBar" placeholder="Meklēt produktu" onkeyup="filterProducts()">
+                        </div>
+
+                        <!-- Product Comparison Container -->
+                        <div class="comparison-container" id="productContainer">
+                            <!-- Product 1 -->
+                            <div class="product-card">
+                                <img src="https://cdn.barbora.lv/products/b130f4c0-4223-44ad-b58f-595863d86163_m.png" alt="Burkāni" class="Burkāni">
+                                <div class="product-details">
+                                    <p class="product-name">Burkāni</p>
+                                    <div class="product-prices">
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.rimi.lv/e-veikals/lv/produkti/augli-un-darzeni/darzeni/kartupeli-un-burkani/burkani-sveramie-150--300-g-kg/p/287107" target="_blank" style="text-decoration: none; color: inherit;">Rimi</a>
+                                            </span>
+                                            <span class="price">0.89€</span>
+                                        </div>
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.barbora.lv/produkti/burkani-kg" target="_blank" style="text-decoration: none; color: inherit;">Maxima</a>
+                                            </span>
+                                            <span class="price">0.89€</span>
+                                        </div>
+                                        <div class="price-row">
+                                            <span class="store-name">Elvi</span>
+                                            <span class="price">0.49€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="product-card">
+                                <img src="https://cdn.barbora.lv/products/bb1b1eed-625b-4b58-8588-a0d42dcd58d3_m.png" alt="Gurķis" class="product-image">
+                                <div class="product-details">
+                                    <p class="product-name">Gurķis garais</p>
+                                    <div class="product-prices">
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.rimi.lv/e-veikals/lv/produkti/augli-un-darzeni/darzeni/gurki-un-tomati/gurkis-garais-latvija-gab-/p/922459" target="_blank" style="text-decoration: none; color: inherit;">Rimi</a>
+                                            </span>
+                                            <span class="price">1.39€</span>
+                                        </div>
+
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.barbora.lv/produkti/gurki-garie-pleve-gab" target="_blank" style="text-decoration: none; color: inherit;">Maxima</a>
+                                            </span>
+                                            <span class="price">0.89€</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="product-card">
+                                <img src="https://cdn.barbora.lv/products/d841086c-f025-4ac1-bed6-2a57c96015cb_m.png" alt="Tomti" class="product-image">
+                                <div class="product-details">
+                                    <p class="product-name">Tomāti Latvija</p>
+                                    <div class="product-prices">
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.rimi.lv/e-veikals/lv/produkti/augli-un-darzeni/darzeni/gurki-un-tomati/tomati-latvijas-kg-1-sk-/p/272195" target="_blank" style="text-decoration: none; color: inherit;">Rimi</a>
+                                            </span>
+                                            <span class="price">3,89€</span>
+                                        </div>
+                                        <div class="price-row">
+                                            <span class="store-name">
+                                                <a href="https://www.barbora.lv/produkti/tomati-latvijas-kg" target="_blank" style="text-decoration: none; color: inherit;">Maxima</a>
+                                            </span>
+                                            <span class="price">3,69€</span>
+                                        </div>
+                    </body>
+                    </html>
